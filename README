@@ -1,0 +1,21 @@
+    Structura principala de tabela hash este pastrata. In ea sunt stocate( dupa un hashcod ce tine de prima litera a
+cuvantului) liste cu noduri ce au in value un TElem, adica un int ce reprezinta lungimea cuvantului si sublista de
+cuvinte. Sublista de cuvinte are ca elemente noduri TCuv, cu un string si un numar de aparitii. Tabela si listele sunt
+implementate sub forma generica.
+    Dupa ce sunt deschise fisierele de input, cerinta se citeste cate o line pe rand, se compara primul cuvant cu cele
+2 comenzi, insert si print. In cazul insertului, stringul se copiaza intr- o variabila de tipul TCuv, setat cu nr de
+aparitii 1. Logica sortarii listei in ordinea aparitiilor progresiv este urmatoarea: Inainte de adaugare in hash,
+cuvantul se verifica daca mai apare in vreo sublista, apelandu-se subprogramul FindValueInTable. Daca s-a gasit in
+sublista, se sterge nodul gasit, se elibereaza memoria pt el, iar functia ii returneaza nr de aparitii. Apoi, nr
+de aparitii este actualizat cu rezultatul functiei +1, si se adauga in ordine in tabela hash cu noul nr de aparitii.
+Acelasi procedeu este realizat si daca stringul nu apare, returnandu-se valoarea 0 si bagandu-se in lista cu nr de
+aparitii 1. Acest procedeu a fost gandit pentru o actualizare progresiva a listei. In cazul in care cuvantul dat
+este cap de sublista, acesta nu ar trebui sa isi schimbe pozitia, asa ca doar este incrementat nr lui de aparitii
+direct in functie, iar FindValueInTable returneaza -1, caz in care in main se elibereaza memoria pt variabila TCuv
+pe care am creat-o pt citire. In inserare in ordine se folosesc 2 subprograme, unul pt inserarea sublistei si unul pt
+inserarea in lista principala. In cea principala se folosesc anumite casturi pt a introduce sublista.
+    Pentru printare se folosesc 3 subprograme diferite, in functie de tip. Printarea tabelei este una obisnuita, in
+printarea cu litera si numarul date se parcurge exact acea sublista, iar ultima parcurge intreaga tabela hash in ordine
+si afiseaza daca conditiile sunt verificate.
+    Apoi se face dealocarea memoriei create. Punctajul pe checkerul local este de 105 p.
+
