@@ -1,21 +1,19 @@
-    Structura principala de tabela hash este pastrata. In ea sunt stocate( dupa un hashcod ce tine de prima litera a
-cuvantului) liste cu noduri ce au in value un TElem, adica un int ce reprezinta lungimea cuvantului si sublista de
-cuvinte. Sublista de cuvinte are ca elemente noduri TCuv, cu un string si un numar de aparitii. Tabela si listele sunt
-implementate sub forma generica.
-    Dupa ce sunt deschise fisierele de input, cerinta se citeste cate o line pe rand, se compara primul cuvant cu cele
-2 comenzi, insert si print. In cazul insertului, stringul se copiaza intr- o variabila de tipul TCuv, setat cu nr de
-aparitii 1. Logica sortarii listei in ordinea aparitiilor progresiv este urmatoarea: Inainte de adaugare in hash,
-cuvantul se verifica daca mai apare in vreo sublista, apelandu-se subprogramul FindValueInTable. Daca s-a gasit in
-sublista, se sterge nodul gasit, se elibereaza memoria pt el, iar functia ii returneaza nr de aparitii. Apoi, nr
-de aparitii este actualizat cu rezultatul functiei +1, si se adauga in ordine in tabela hash cu noul nr de aparitii.
-Acelasi procedeu este realizat si daca stringul nu apare, returnandu-se valoarea 0 si bagandu-se in lista cu nr de
-aparitii 1. Acest procedeu a fost gandit pentru o actualizare progresiva a listei. In cazul in care cuvantul dat
-este cap de sublista, acesta nu ar trebui sa isi schimbe pozitia, asa ca doar este incrementat nr lui de aparitii
-direct in functie, iar FindValueInTable returneaza -1, caz in care in main se elibereaza memoria pt variabila TCuv
-pe care am creat-o pt citire. In inserare in ordine se folosesc 2 subprograme, unul pt inserarea sublistei si unul pt
-inserarea in lista principala. In cea principala se folosesc anumite casturi pt a introduce sublista.
-    Pentru printare se folosesc 3 subprograme diferite, in functie de tip. Printarea tabelei este una obisnuita, in
-printarea cu litera si numarul date se parcurge exact acea sublista, iar ultima parcurge intreaga tabela hash in ordine
-si afiseaza daca conditiile sunt verificate.
-    Apoi se face dealocarea memoriei create. Punctajul pe checkerul local este de 105 p.
 
+The goal is to create statistics for analyzing a text file. For example, we want to determine the frequencies of words in the text, the frequency of words with a certain length, etc.
+Functionalities:
+
+```
+Word insertion
+Display hash table
+Display words starting with a specific letter and of a certain length
+Display words that appear at most n times
+```
+Code Explain:
+The main structure of the hash table is maintained. In it, lists with nodes storing a TElem value are stored (based on a hash code related to the first letter of the word), representing the word's length and a sublist of words. The sublist of words consists of TCuv nodes,
+each containing a string and a number of occurrences. Both the table and the lists are implemented generically.
+
+After opening the input files, each line is read one by one, and the first word is compared with the two commands, "insert" and "print". In the case of insertion, the string is copied into a variable of type TCuv, initialized with a number of occurrences equal to 1. The logic of sorting the list in ascending order of occurrences is as follows: Before adding to the hash, the word is checked if it appears in any sublist by calling the FindValueInTable subroutine. If found in the sublist, the found node is deleted, its memory is freed, and the function returns the number of occurrences. Then, the number of occurrences is updated with the result of the function +1, and it is added in order to the hash table with the new number of occurrences. The same procedure is performed if the string does not appear, returning the value 0 and inserting it into the list with a number of occurrences equal to 1. This process was designed for a progressive update of the list. In the case where the given word is the head of the sublist, it should not change its position, so only its occurrence number is incremented directly in the function, and FindValueInTable returns -1, in which case the memory for the TCuv variable created for reading is deallocated in the main. Two subprograms are used for ordered insertion, one for inserting the sublist and one for inserting into the main list. Certain casts are used in the main list to introduce the sublist.
+
+For printing, three different subprograms are used depending on the type. Printing the table is a regular one, while printing with the given letter and number traverses exactly that sublist, and the last one traverses the entire hash table in order and prints if the conditions are met.
+
+Finally, memory deallocation is performed.
