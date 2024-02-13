@@ -1,6 +1,9 @@
 
-The goal is to create statistics for analyzing a text file. For example, we want to determine the frequencies of words in the text, the frequency of words with a certain length, etc.
-Functionalities:
+# Scope
+The goal is to create statistics for analyzing a text file.** For example, we want to determine the frequencies of words in the text, the frequency of words with a certain length, etc.
+
+
+# Functionalities:
 
 ```
 Word insertion
@@ -8,7 +11,9 @@ Display hash table
 Display words starting with a specific letter and of a certain length
 Display words that appear at most n times
 ```
-Code Explain:
+# Code Explain:
+
+
 The main structure of the hash table is maintained. In it, lists with nodes storing a TElem value are stored (based on a hash code related to the first letter of the word), representing the word's length and a sublist of words. The sublist of words consists of TCuv nodes,
 each containing a string and a number of occurrences. Both the table and the lists are implemented generically.
 
