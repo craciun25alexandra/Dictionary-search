@@ -2,6 +2,7 @@
 # Scope
 The goal is to create statistics for analyzing a text file.** For example, we want to determine the frequencies of words in the text, the frequency of words with a certain length, etc.
 
+![image](https://github.com/craciun25alexandra/Dictionary-search/assets/94574197/46a740f9-acb5-47ab-aa35-9be02d2e5158)
 
 # Functionalities:
 
